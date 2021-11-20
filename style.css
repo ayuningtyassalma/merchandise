@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #ddd;
+    font-size: 20px;
+    margin: 50px;
+    font-family: 'Nunito';
+}
+
+/* container */
+.container {
+    display: grid;
+    gap: 5px;
+}
+
+/* header  */
+.header {
+    display: grid;
+    grid-template-areas: 'hero hero features1'
+        'hero hero features2'
+    ;
+}
+
+/* services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.service {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.service .icon {
+    font-size: 2em;
+}
+
+
+
+.hero {
+    grid-area: hero;
+    min-height: 500px;
+    background-image: url(../gridProject/Asset/alireza-esmaeeli-BsPevGc_RIM-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.hero>* {
+    display: none;
+}
+
+.features {
+    background-color: #000;
+    color: #fff;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.features1 {
+    grid-area: features1;
+    background-image: url(../gridProject/Asset/dmitriy-frantsev-LMbz9yrL3lE-unsplash.jpg);
+    background-size: cover;
+}
+
+.features2 {
+    grid-area: features2;
+    background-image: url(../gridProject/Asset/force-majeure-00tlC0Clfrs-unsplash.jpg);
+    background-size: cover;
+}
+
+.features .price {
+    font-size: 2em;
+    font-weight: 900;
+    color: rgba(163, 131, 0, 0.918);
+}
+
+
+/* Navigasi */
+nav {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    order: -1;
+}
+
+nav .brand {
+    font-size: 1.2em;
+    color: #9f8007;
+}
+
+nav ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-items: center;
+    gap: 5px;
+}
+
+nav a {
+    display: block;
+    background-color: #9f8007;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 3px;
+}
+
+/* responsive */
+@media screen and (max-width:1024px) {
+    nav {
+        order: inherit;
+        grid-template-columns: 1fr;
+    }
+
+    nav .brand {
+        display: none;
+
+    }
+
+    .hero>* {
+        display: block;
+        background-color: #9f8007;
+        color: #fff;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .features1,
+    .features2 {
+        background-position: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .header {
+        grid-template-areas: 'hero'
+            'features1'
+            'features2'
+        ;
+    }
+
+    .features1,
+    .features2 {
+        background-position: center;
+    }
+}
